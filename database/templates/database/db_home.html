@@ -1,0 +1,14 @@
+{% extends 'database/home.html' %}
+
+{% block title %}База данных{% endblock %}
+
+{% block home %}
+    <h1>База данных</h1>
+
+    {% for elem in database %}
+    <div class ="alert alert-viewing">
+        <p> {{elem.productName}}, {{elem.quantity}} {{elem.unit}}, цена за единицу товара: {{elem.price}}р,
+            {{elem.date}}, суммарная стоимость данного товара: {% widthratio elem.quantity 1 elem.price %} </p>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'database/home.html' %}
+
+{% block title %}Добавление товара{% endblock %}
+
+{% block home %}
+    <div class="features">
+        <h1>Добавление товара</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.productName }}<br>
+            {{ form.quantity }}<br>
+            {{ form.unit }}<br>
+            {{ form.price }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Добавить товар</button>
+        </form>
+    </div>
+{% endblock %}
